@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+* {
+margin: 0;
+padding: 0;
+text-decoration: none;
+font-family: sans-serif;
+box-sizing: border-box;
+background: none;
+}
+footer {
+height: 400px;
+display: flex;
+background-color: rgb(0, 0, 0);
+border-top: 4px solid blue;
+z-index: 1000;
+padding: 0;
+}
+.navbar {
+ position: fixed;
+ background-color: transparent;
+ width: 100%;
+ padding: 20px 0;
+ top: 0;
+ z-index: 999;
+ transition: .3s linear;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.inner-width {
+width: 1300px;
+margin: auto;
+height: 30px;
+padding: 0 40px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.logo {
+height: 55px;
+width: 55px;
+background-image: url('sdcard/portfolio@/img/logo.png');
+background-size: contain;
+background-repeat: no-repeat;
+}
+#menu-toggler {
+background: none;
+width: 30px;
+outline: none;
+border: none;
+cursor: pointer;
+z-index: 999;
+position: relative;
+display: none;
+}
+#menu-toggler span {
+display: block;
+height: 3px;
+background-color: #fff;
+margin: 6px 0;
+position: relative;
+transition: .3s linear;
+}
+.navbar-menu {
+width: 400px;
+}
+
+.navbar-menu a {
+color: white;
+font-size: 15px;
+font-weight: 500;
+margin-left: 40px;
+transition: .2s linear;
+}
+.navbar-menu a:hover {
+color: rgb(20, 200, 200);
+font-size: 20px;
+transition: .2s linear;
+}
+.Home {
+height: 100vh;
+width: 100%;
+background: linear-gradient(to bottom, red, steelblue);
+}
+
+.Home, .inner-width {
+display: flex;
+
+}
+.Home .content {
+padding: 20px;
+display: flex;
+flex-direction: column;
+}
+.Home .content h1 {
+color: white;
+font-size: 60px;
+padding: 10px;
+}
+.Home .content h1::after {
+content: " Moody";
+animation: textanim 5s linear;
+}
+@keyframes textanim{
+ 50% {
+ content: " a developer";
+ }
+ 75% {
+ content: " a writer";
+ }
+  100% {
+  content: " a designer";
+
+  }
+}
+
+.sm, .button {
+color: white;
+padding: 10px;
+text-align: center;
+margin-top: 20px;
+}
+.sm {
+color: white;
+}
+
+.sm a {
+color: white;
+padding: 5px;
+transition: .2s linear;
+}
+.sm a:hover {
+color: #48dbfb;
+}
+.llinks a {
+font-width: 15px;
+font-weight: 500;
+color: white;
+margin: 10px;
+border: 2px solid #48dbfb;
+border-height: 200Px;
+padding: 10px 9px;
+border-radius: 6px;
+display: inline-block;
+width: 180px;
+}
+.llinks a:hover,
+.llinks a:nth-child(2) {
+background: #48dbfb;
+transition: .3s linear;
+}
+@media screen and (max-width: 980px) {
+  #menu-toggler {
+  display: block;
+  }
+  .navbar {
+  display: flex;
+  justify-content: flex-end;
+
+  }
+  .navbar-menu {
+  position: fixed;
+  height: 100vh;
+  background-color: steelblue;
+  top: 0;
+  right: 0;
+  max-width: 400px;
+  padding: 80px 0px;
+  transition: .2s linear;
+  display: none;
+  }
+  .navbar-menu a {
+  display: block;
+  padding: 20px;
+  font-size: 35px;
+  font-weight: 500;
+  }
+  .navbar-menu a:hover {
+  color: cyan;
+  font-size: 36px;
+  transition: .2s linear;
+  }
+}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="sdcard/portfolio@/fontawesome/css/all.min.css">
+  <title>My portfolio</title>
+  <meta http-equiv="refresh" content="">
+</head>
+<body>
+<!-- navbar -->
+<nav class="navbar">
+  <div class="inner-width">
+    <a href="#" class="logo"></a>
+
+    <div class="navbar-menu">
+      <a href="#" class="a">About</a>
+      <a href="#" class="a">service</a>
+      <a href="#" class="a">Education</a>
+      <a href="#" class="a">work</a>
+    </div>
+    <button type="button" class="i" id="menu-toggler" value=" button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+</nav>
+<!-- Home -->
+<section class="Home">
+  <div class="inner-width">
+    <div class="content">
+      <h1>
+        Hi I am
+      </h1>
+      <div class="sm">
+        <a href="#" class="fab fa-facebook-fa"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-github"></a>
+      </div>
+      <div class="llinks">
+        <a href="#">Contact me </a>
+        <a href="#"> Download CV </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<footer>
+  <p>
+
+  </p>
+</footer>
+<script>
+const navmenu = document.getElementsByClassName("navbar-menu");
+const btt = document.querySelector("#menu-toggler");
+const nav = document.getElementsByClassName("navbar");
+const a = document.getElementsByClassName("a");
+const span = document.getElementsByTagName("span");
+var i;
+window.addEventListener ("scroll", function(){
+if(window.scrollY > 20){
+  nav[0].style.backgroundColor = "white";
+  navmenu[0].style.backgroundColor = "white";
+  for (i = 0; i < a.length; i++){
+         a[i].style.color = "black";}
+  for (i = 0; i < span.length; i++){
+  span[i].style.backgroundColor = "black";} }else {
+  navmenu[0].style.backgroundColor = "";
+  nav[0].style.backgroundColor = "";
+  for (i = 0; i < a.length; i++){
+  a[i].style.color = ""; }
+  for (i = 0; i < span.length; i++){
+    span[i].style.backgroundColor = "";
+    }  }
+});
+
+btt.addEventListener ("click", function(){
+      if (navmenu[0].style.display == "" || navmenu[0].style.display == "none") {
+         span[0].style.transform = "rotate(45deg)";
+         span[0].style.top = "4px";
+         span[1].style.transform = "rotate(-45deg)";
+         span[1].style.bottom = "4px";
+         span[2].style.display = "none"
+         navmenu[0].style.display = "block";
+      } else {
+         navmenu[0].style.display = "none";
+         span[0].style.transform = "";
+         span[0].style.top = "";
+         span[1].style.transform = "";
+         span[1].style.bottom = "";
+         span[2].style.display = ""
+         navmenu[0].style.display = "";
+      }
+});
+
+</script>
+</body>
+</html>

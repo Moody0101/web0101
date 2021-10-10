@@ -1,0 +1,101 @@
+body {
+padding: 0;
+margin: 0;
+height: 100vh;
+background: url(img/na.jpg);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+section {
+font-family: sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 70%;
+width: 80%;
+background: black;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 5%;
+box-shadow: 30px 20px 0px 2px rgba(0, 0, 0, 50%);
+}
+section div {
+padding: 100px 100px;
+position: relative;
+display: flex;
+align-items: center;
+flex-basis: 500px;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+section div h1 {
+color: white;
+text-align: center;
+cursor: pointer;
+width: 100%;
+}
+section div a {
+text-align: center;
+background: white;
+color: black;
+border: 2px solid white;
+position: relative;
+padding: 20px;
+cursor: pointer;
+text-decoration: none;
+underline: none;
+transition: 0.5s ease;
+z-index: 0;
+}
+section div a:hover {
+color: white;
+}
+section div a::after {
+content: "";
+position: absolute;
+background-color: black;
+top: 0;
+right: 0;
+border-radius: 2px 0 0 2px;
+z-index: -1;
+height: 100%;
+width: 100%;
+transform-origin: 0 0;
+transition: transform 0.5s cubic-bezier(0.5, 1.7, 0.2, 0.7);
+}
+a::after {
+transform: scaleY(0);
+}
+section div a:hover::after {
+transform: scaleY(1);
+}
+section div h1::after {
+content: " Moody ";
+animation: anim 5s infinite;
+}
+@keyframes anim {
+ 0% {
+ content: " A developer";
+ }
+ 50% {
+ content: " A designer";
+ }
+ 90% {
+ content: " A writer,  I guess";
+ }
+}
+@Media screen and (min-width: 800px) {
+section {
+background: none;
+box-shadow: none;
+border-left: 5px solid lime;
+border-radius: 0;
+}
+section div h1 {
+color: black;
+}
+}
+
